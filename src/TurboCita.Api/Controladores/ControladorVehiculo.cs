@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using TurboCita.Api.Aplicacion.Comandos;
+using TurboCita.Api.Aplicacion.DTOs;
+using TurboCita.Api.Aplicacion.Modelos;
 
 namespace TurboCita.Api.Controladores;
 
@@ -6,11 +10,7 @@ namespace TurboCita.Api.Controladores;
 [Route("[controller]")]
 public class ControladorVehiculo : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
+    private readonly IMediator _mediator;
     private readonly ILogger<ControladorVehiculo> _logger;
 
     public ControladorVehiculo(ILogger<ControladorVehiculo> logger)
@@ -18,15 +18,19 @@ public class ControladorVehiculo : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> CrearCliente([FromHeader] ModeloEncabezadoSolicitud header, [FromBody] CrearClienteDTO boby)
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        ComandoCrearCliente createClientCommand = new()
         {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+            Cuerpo = boby
+        };
+
+        int clienteId = await _mediator.Send(createClientCommand);
+
+        return Ok(clienteId);
     }
 }

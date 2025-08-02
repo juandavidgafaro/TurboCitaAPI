@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Aplicacion\Comandos\ComandoCrearCliente.cs~RF2f478ba1.TMP" />
+    <None Remove="Aplicacion\DTOs\CrearVehiculoDTO.cs~RF2f3b4e54.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF2ecf495f.TMP" />
   </ItemGroup>
 

@@ -21,15 +21,15 @@ public class ControladorCliente : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<int>> CrearCliente([FromHeader] ModeloEncabezadoSolicitud header, [FromBody] CrearClienteDTO boby)
+    public async Task<ActionResult<int>> CrearCliente([FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] CrearClienteDTO cuerpo)
     {
-        ComandoCrearCliente createClientCommand = new()
+        ComandoCrearCliente comandoCrearCliente = new()
         {
-            Body = boby
+            Cuerpo = cuerpo
         };
 
-        int clientId = await _mediator.Send(createClientCommand);
+        int clienteId = await _mediator.Send(comandoCrearCliente);
 
-        return Ok(clientId);
+        return Ok(clienteId);
     }
 }
