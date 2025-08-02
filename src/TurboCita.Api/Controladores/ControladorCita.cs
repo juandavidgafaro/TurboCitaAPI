@@ -4,16 +4,16 @@ namespace TurboCita.Api.Controladores;
 
 [ApiController]
 [Route("[controller]")]
-public class ControladorCitas : ControllerBase
+public class ControladorCita : ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-    private readonly ILogger<ControladorCitas> _logger;
+    private readonly ILogger<ControladorCita> _logger;
 
-    public ControladorCitas(ILogger<ControladorCitas> logger)
+    public ControladorCita(ILogger<ControladorCita> logger)
     {
         _logger = logger;
     }
