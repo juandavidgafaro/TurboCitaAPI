@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TurboCita.Api.Controllers
+namespace TurboCita.Api.Controladores
 {
     [ApiController]
     [Route("[controller]")]
