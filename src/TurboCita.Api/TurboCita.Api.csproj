@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF2ecf495f.TMP" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aplicacion\" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
 </Project>
