@@ -10,6 +10,7 @@
     <None Remove="Aplicacion\Comandos\ComandoCrearCliente.cs~RF2f478ba1.TMP" />
     <None Remove="Aplicacion\DTOs\CrearVehiculoDTO.cs~RF2f3b4e54.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF2ecf495f.TMP" />
+    <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF2f4f8a71.TMP" />
   </ItemGroup>
 
   <ItemGroup>
