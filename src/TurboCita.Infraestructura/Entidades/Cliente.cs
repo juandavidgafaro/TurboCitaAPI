@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TurboCita.Dominio.Entidades;
 
-namespace TurboCita.Infraestructura.Entidades
+namespace TurboCita.Infraestructura.Entidades;
+public class Cliente
 {
-    internal class Cliente
+    public Cliente()
     {
+        
+    }
+
+
+    public static implicit operator EntidadCliente(Cliente entity)
+    {
+        EntidadCliente cliente = default;
+
+        if (entity != default)
+        {
+            cliente = new(
+  
+            );
+        }
+
+        return cliente;
     }
 }

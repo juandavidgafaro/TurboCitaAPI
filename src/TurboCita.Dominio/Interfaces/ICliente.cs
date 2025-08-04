@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TurboCita.Dominio.Entidades;
 
-namespace TurboCita.Dominio.Interfaces
+namespace TurboCita.Dominio.Interfaces;
+public interface ICliente
 {
-    internal class ICliente
-    {
-    }
+    Task CrearCliente(EntidadCliente client);
+    Task<EntidadCliente> ConsultarClientePorIdentificacion(string tipoDocumento, int numeroDocumento);
 }

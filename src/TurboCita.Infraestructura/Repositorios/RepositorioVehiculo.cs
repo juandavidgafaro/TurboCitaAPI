@@ -1,6 +1,5 @@
-﻿namespace TurboCita.Infraestructura.Repositorios
+﻿namespace TurboCita.Infraestructura.Repositorios;
+public class RepositorioVehiculo
 {
-    internal class RepositorioVehiculo
-    {
-    }
+
 }

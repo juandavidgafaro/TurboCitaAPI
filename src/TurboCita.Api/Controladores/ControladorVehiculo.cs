@@ -26,7 +26,7 @@ public class ControladorVehiculo : ControllerBase
     {
         ComandoCrearCliente createClientCommand = new()
         {
-            Cuerpo = boby
+            Informacion = boby
         };
 
         int clienteId = await _mediator.Send(createClientCommand);

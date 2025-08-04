@@ -25,11 +25,27 @@ public class ControladorCliente : ControllerBase
     {
         ComandoCrearCliente comandoCrearCliente = new()
         {
-            Cuerpo = cuerpo
+            Informacion = cuerpo
         };
 
-        int clienteId = await _mediator.Send(comandoCrearCliente);
+        await _mediator.Send(comandoCrearCliente);
 
-        return Ok(clienteId);
+        return Ok();
+    }
+
+    [HttpGet("ConsultarClientePorIdentificacion")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> ObtenerClientePorIdentificacion([FromHeader] ModeloEncabezadoSolicitud datosCabecer, [FromBody] CrearClienteDTO cuerpo)
+    {
+        ComandoCrearCliente comandoCrearCliente = new()
+        {
+            Informacion = cuerpo
+        };
+
+        await _mediator.Send(comandoCrearCliente);
+
+        return Ok();
     }
 }

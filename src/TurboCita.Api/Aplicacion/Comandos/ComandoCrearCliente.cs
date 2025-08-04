@@ -2,7 +2,7 @@
 using TurboCita.Api.Aplicacion.DTOs;
 
 namespace TurboCita.Api.Aplicacion.Comandos;
-public class ComandoCrearCliente : IRequest<int>
+public class ComandoCrearCliente : IRequest<Unit>
 {
-    public CrearClienteDTO Cuerpo { get; set; }
+    public CrearClienteDTO Informacion { get; set; }
 }

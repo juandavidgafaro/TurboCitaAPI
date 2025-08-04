@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TurboCita.Dominio.Entidades
+﻿namespace TurboCita.Dominio.Entidades;
+public class EntidadVehiculo
 {
-    internal class EntidadVehiculo
-    {
-    }
+    public string TipoVehiculo { get; set; }
+    public string Placa { get; set; }
 }

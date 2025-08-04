@@ -7,17 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Entidades\Cliente.cs~RF33c09d91.TMP" />
+    <None Remove="Repositorios\hfmucttp.xvc~" />
+    <None Remove="Repositorios\RepositorioCliente.cs~RF33b99f97.TMP" />
     <None Remove="Repositorios\RepositorioVehiculo.cs~RF30016ca6.TMP" />
+    <None Remove="Repositorios\RepositorioVehiculo.cs~RF306e7213.TMP" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Configuraciones\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TurboCita.Dominio\TurboCita.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

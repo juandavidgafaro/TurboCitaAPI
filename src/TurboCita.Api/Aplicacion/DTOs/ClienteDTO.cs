@@ -1,5 +1,5 @@
-﻿namespace TurboCita.Dominio.Entidades;
-public class EntidadCliente
+﻿namespace TurboCita.Api.Aplicacion.DTOs;
+public class ClienteDTO
 {
     public int Id { get; set; }
     public string Nombres { get; set; }
