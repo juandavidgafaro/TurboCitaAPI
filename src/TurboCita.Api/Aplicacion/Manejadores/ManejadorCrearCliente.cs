@@ -14,16 +14,17 @@ public class ManejadorCrearCliente : IRequestHandler<ComandoCrearCliente, Unit>
         _cliente = cliente;
     }
 
-    public async Task<Unit> Handle(ComandoCrearCliente solictud, CancellationToken token)
+    public async Task<Unit> Handle(ComandoCrearCliente solicitud, CancellationToken token)
     {
         EntidadCliente cliente = new()
         {
-            Nombres = solictud.Informacion.Nombres,
-            Apellidos = solictud.Informacion.Apellidos,
-            NumeroDocumento = solictud.Informacion.NumeroDocumento,
-            Direccion = solictud.Informacion.Direccion,
-            CorreoElectronico = solictud.Informacion.CorreoElectronico,
-            Celular = solictud.Informacion.Celular
+            Nombres = solicitud.Informacion.Nombres,
+            Apellidos = solicitud.Informacion.Apellidos,
+            TipoDocumento = solicitud.Informacion.TipoDocumento,
+            NumeroDocumento = solicitud.Informacion.NumeroDocumento,
+            Direccion = solicitud.Informacion.Direccion,
+            CorreoElectronico = solicitud.Informacion.CorreoElectronico,
+            Celular = solicitud.Informacion.Celular
         };
 
         await _cliente.CrearCliente(cliente);

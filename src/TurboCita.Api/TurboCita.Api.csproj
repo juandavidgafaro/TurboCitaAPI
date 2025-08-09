@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="30serpz4.quf~" />
     <None Remove="Aplicacion\Comandos\ComandoCrearCliente.cs~RF2f478ba1.TMP" />
     <None Remove="Aplicacion\Consultas\ConsultarClientePorIdentificacion.cs~RF3450753d.TMP" />
     <None Remove="Aplicacion\Consultas\ConsultarClientePorIdentificacion.cs~RF345403b3.TMP" />
@@ -17,6 +18,13 @@
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF2ecf495f.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF2f4f8a71.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCliente.cs~RF33d91acb.TMP" />
+    <None Remove="Aplicacion\Manejadores\ManejadorCrearVehiculo.cs~RF359a20bf.TMP" />
+    <None Remove="appsettings.Development.json~RF39f33fab.TMP" />
+    <None Remove="appsettings.Development.json~RF39f5d337.TMP" />
+    <None Remove="Extensiones\ExtensionCors.cs~RF3ab293a6.TMP" />
+    <None Remove="Extensiones\ExtensionCors.cs~RF3ab5d2a4.TMP" />
+    <None Remove="Extensiones\ExtensionCors.cs~RF3ab638f0.TMP" />
+    <None Remove="Extensiones\ExtensionMediador.cs~RF3a0bb3fc.TMP" />
   </ItemGroup>
 
   <ItemGroup>

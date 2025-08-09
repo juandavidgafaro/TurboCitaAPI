@@ -1,37 +1,44 @@
-﻿using TurboCita.Dominio.Entidades;
+﻿using Microsoft.Extensions.Options;
+using TurboCita.Dominio.Entidades;
 using TurboCita.Dominio.Interfaces;
+using TurboCita.Infraestructura.Configuraciones;
 using TurboCita.Infraestructura.Entidades;
-using TurboCita.Infraestructura.Interfaces;
+using TurboCita.Infraestructura.Recursos;
 using TurboCita.Infraestructura.Repositorios.Base.SQLServer;
 
 namespace TurboCita.Infraestructura.Repositorios;
 public class RepositorioCliente : SqlServerBase<Cliente>, ICliente
 {
-    public RepositorioCliente(string connectionString) : base(connectionString)
+    public RepositorioCliente(IOptions<ConfiguracionesInfraestructura> configuraciones) 
+        : base(configuraciones.Value.ConfiguracionesSQLServer.CadenaConexion.TurboCitaServidorBD)
     {
     }
 
-    public async Task<EntidadCliente> CrearCliente(EntidadCliente client)
+    public Task<EntidadCliente> ConsultarClientePorIdentificacion(string tipoDocumento, int numeroDocumento)
     {
-        string sql = sqlstatements.insert_client;
+        throw new NotImplementedException();
+    }
+
+    public async Task CrearCliente(EntidadCliente cliente)
+    {
+        string sql = ProcesosSQL.CrearCliente;
 
         try
         {
-            ClientEntity insertionResult = await SingleInsert<ClientEntity>(sql, new
+            await SingleInsert(sql, new
             {
-                client.Name,
-                client.IdentificationNumber,
-                client.IdentificationType,
-                PersonType = client.PersonType.Name,
-                Country = client.Country.Name,
-                LegalRepresentativeId = client.LegalRepresentative?.Id
+                cliente.Nombres,
+                cliente.Apellidos,
+                cliente.TipoDocumento,
+                cliente.NumeroDocumento,
+                cliente.Direccion,
+                cliente.CorreoElectronico,
+                cliente.Celular
             });
-
-            return insertionResult;
         }
         catch (Exception ex)
         {
-            throw new InfrastructureException($"Error al intentar crear el cliente con numero de identificación: {client.IdentificationNumber}, detalle:{ex.Message}");
+            throw new Exception($"Error al intentar crear el cliente con numero de identificación: {cliente.NumeroDocumento}, detalle:{ex.Message}");
         }
     }
 

@@ -8,29 +8,28 @@ namespace TurboCita.Api.Controladores;
 
 [ApiController]
 [Route("[controller]")]
-public class ControladorVehiculo : ControllerBase
+public class VehiculoControlleer : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly ILogger<ControladorVehiculo> _logger;
 
-    public ControladorVehiculo(ILogger<ControladorVehiculo> logger)
+    public VehiculoControlleer(IMediator mediator)
     {
-        _logger = logger;
+        _mediator = mediator;
     }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<int>> CrearCliente([FromHeader] ModeloEncabezadoSolicitud header, [FromBody] CrearClienteDTO boby)
+    public async Task<ActionResult> CrearCliente([FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] CrearVehiculoDTO datosVehiculo)
     {
-        ComandoCrearCliente createClientCommand = new()
+        ComandoCrearVehiculo comandoCrearVehiculo = new()
         {
-            Informacion = boby
+            Informacion = datosVehiculo
         };
 
-        int clienteId = await _mediator.Send(createClientCommand);
+        await _mediator.Send(comandoCrearVehiculo);
 
-        return Ok(clienteId);
+        return Ok();
     }
 }

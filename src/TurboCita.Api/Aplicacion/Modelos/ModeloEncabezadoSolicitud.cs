@@ -4,6 +4,6 @@ namespace TurboCita.Api.Aplicacion.Modelos;
 
 public class ModeloEncabezadoSolicitud 
 {
-    [FromHeader(Name = "FrontUser")]
+    [FromHeader(Name = "Fuente")]
     public string Fuente { get; set; }
 }

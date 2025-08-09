@@ -1,11 +1,29 @@
 ﻿using MediatR;
-using TurboCita.Api.Aplicacion.DTOs;
+using TurboCita.Api.Aplicacion.Comandos;
+using TurboCita.Dominio.Entidades;
+using TurboCita.Dominio.Interfaces;
 
 namespace TurboCita.Api.Aplicacion.Manejadores;
-public class ManejadorCrearVehiculo : IRequestHandler<CrearVehiculoDTO, int>
+public class ManejadorCrearVehiculo : IRequestHandler<ComandoCrearVehiculo, Unit>
 {
-    public Task<int> Handle(CrearVehiculoDTO request, CancellationToken cancellationToken)
+    private readonly IVehiculo _vehiculo;
+
+    public ManejadorCrearVehiculo(IVehiculo vehiculo)
     {
-        throw new NotImplementedException();
+        _vehiculo = vehiculo;
+    }
+
+    public async Task<Unit> Handle(ComandoCrearVehiculo solicitud, CancellationToken token)
+    {
+        EntidadVehiculo vehiculo = new()
+        {
+            ClienteId = solicitud.Informacion.ClienteId,
+            TipoVehiculo = solicitud.Informacion.TipoVehiculo,
+            Placa = solicitud.Informacion.Placa
+        };
+
+        await _vehiculo.CrearVehiculo(vehiculo);
+
+        return Unit.Value;
     }
 }

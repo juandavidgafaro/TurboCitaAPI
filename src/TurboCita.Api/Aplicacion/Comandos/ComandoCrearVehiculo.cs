@@ -2,7 +2,7 @@
 using TurboCita.Api.Aplicacion.DTOs;
 
 namespace TurboCita.Api.Aplicacion.Comandos;
-public class ComandoCrearVehiculo : IRequest<int>
+public class ComandoCrearVehiculo : IRequest<Unit>
 {
-    public CrearVehiculoDTO Body { get; set; }
+    public CrearVehiculoDTO Informacion { get; set; }
 }

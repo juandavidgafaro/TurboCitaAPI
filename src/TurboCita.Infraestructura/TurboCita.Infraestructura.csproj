@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Configuraciones\ConfiguracionesInfraestructura.cs~RF35faa472.TMP" />
+    <None Remove="Configuraciones\ConfiguracionesInfraestructura.cs~RF35fd113c.TMP" />
+    <None Remove="Configuraciones\ConfiguracionesInfraestructura.cs~RF39fdc507.TMP" />
+    <None Remove="Configuraciones\ConfiguracionesSQLServer.cs~RF39f1a024.TMP" />
+    <None Remove="Configuraciones\ConfiguracionesSQLServer.cs~RF39fd0bc9.TMP" />
     <None Remove="Entidades\Cliente.cs~RF33c09d91.TMP" />
+    <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f6733da.TMP" />
     <None Remove="Repositorios\hfmucttp.xvc~" />
     <None Remove="Repositorios\RepositorioCliente.cs~RF33b99f97.TMP" />
     <None Remove="Repositorios\RepositorioVehiculo.cs~RF30016ca6.TMP" />
@@ -15,16 +21,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configuraciones\" />
+    <Folder Include="Recursos\SQL\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.7" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TurboCita.Dominio\TurboCita.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Recursos\ProcesosSQL.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ProcesosSQL.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Recursos\ProcesosSQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProcesosSQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
