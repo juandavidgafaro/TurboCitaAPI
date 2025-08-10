@@ -14,6 +14,8 @@
     <None Remove="Configuraciones\ConfiguracionesSQLServer.cs~RF39fd0bc9.TMP" />
     <None Remove="Entidades\Cliente.cs~RF33c09d91.TMP" />
     <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f6733da.TMP" />
+    <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f7aea9b.TMP" />
+    <None Remove="Repositorios\bxyc3igd.2in~" />
     <None Remove="Repositorios\hfmucttp.xvc~" />
     <None Remove="Repositorios\RepositorioCliente.cs~RF33b99f97.TMP" />
     <None Remove="Repositorios\RepositorioVehiculo.cs~RF30016ca6.TMP" />

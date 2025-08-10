@@ -8,11 +8,11 @@ namespace TurboCita.Api.Controladores;
 
 [ApiController]
 [Route("[controller]")]
-public class VehiculoControlleer : ControllerBase
+public class VehiculoController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public VehiculoControlleer(IMediator mediator)
+    public VehiculoController(IMediator mediator)
     {
         _mediator = mediator;
     }

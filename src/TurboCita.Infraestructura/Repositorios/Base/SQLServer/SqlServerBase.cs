@@ -6,96 +6,100 @@ namespace TurboCita.Infraestructura.Repositorios.Base.SQLServer;
 
 public class SqlServerBase<T> where T : class
 {
-    public required string ConnectionString;
+    public required string _cadenaConexion;
     public SqlServerBase(string connectionString)
     {
-        ConnectionString = connectionString;
+        _cadenaConexion = connectionString;
     }
 
-    public async Task<int> SingleInsert(string sql, object parameters)
+    public async Task<int> InserccionUnitaria(string sql, object parametros)
     {
-        using (SqlConnection conn = new SqlConnection(ConnectionString))
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
-            var insertedId = await conn.ExecuteScalarAsync<int>(sql, parameters);
-            return insertedId;
+            var idInsertado = await conexion.ExecuteScalarAsync<int>(sql, parametros);
+            return idInsertado;
         }
     }
 
-
-    public async Task<T> SingleInsert<T>(string sql, object parameters)
+    public async Task<T> InsertarUno<T>(string sql, object parametros)
     {
-        using (SqlConnection conn = new SqlConnection(ConnectionString))
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
-            var insertedEntity = await conn.QuerySingleAsync<T>(sql, parameters);
-            return insertedEntity;
+            var entidadInsertada = await conexion.QuerySingleAsync<T>(sql, parametros);
+            return entidadInsertada;
         }
     }
 
-    public async Task<int> SingleUpdate(string sql, object parameters)
+    public async Task<int> ActualizarUno(string sql, object parametros)
     {
-        int affectedRows;
-        using (SqlConnection conn = new SqlConnection(ConnectionString))
+        int filasAfectadas;
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
-            conn.Open();
-            affectedRows = await conn.ExecuteAsync(sql, parameters, commandTimeout: 120);
-            conn.Close();
+            conexion.Open();
+            filasAfectadas = await conexion.ExecuteAsync(sql, parametros, commandTimeout: 120);
+            conexion.Close();
         }
-        return affectedRows;
+        return filasAfectadas;
     }
 
-    public async Task<int> SingleUpdate(string sql)
+    public async Task<int> ActualizarUno(string sql)
     {
-        int affectedRows;
-        using (SqlConnection conn = new SqlConnection(ConnectionString))
+        int filasAfectadas;
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
-            conn.Open();
-            affectedRows = await conn.ExecuteAsync(sql, commandTimeout: 120);
-            conn.Close();
+            conexion.Open();
+            filasAfectadas = await conexion.ExecuteAsync(sql, commandTimeout: 120);
+            conexion.Close();
         }
-        return affectedRows;
+        return filasAfectadas;
     }
 
-    public async Task<IEnumerable<TResult>> ExecuteResult<TResult>(string sql, object parameters)
+    public async Task<IEnumerable<TResultado>> EjecutarResultado<TResultado>(string sql, object parametros)
     {
-        IEnumerable<TResult> result = Enumerable.Empty<TResult>();
-        using (SqlConnection conn = new SqlConnection(ConnectionString))
+        IEnumerable<TResultado> resultado = Enumerable.Empty<TResultado>();
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
             try
             {
-                conn.Open();
-                result = await conn.QueryAsync<TResult>(sql, parameters,
-                    commandType: CommandType.Text, commandTimeout: 120);
-                conn.Close();
+                conexion.Open();
+                resultado = await conexion.QueryAsync<TResultado>(
+                    sql,
+                    parametros,
+                    commandType: CommandType.Text,
+                    commandTimeout: 120
+                );
+                conexion.Close();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        return result;
+        return resultado;
     }
 
-
-    public async Task<T> ExecuteSingleAsync(string sql, object sqlParameters)
+    public async Task<T> EjecutarUnoAsync(string sql, object parametrosSql)
     {
-        T sqlResponse = default;
+        T respuestaSql = default;
 
-        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
-            connection.Open();
-            sqlResponse = (await connection.QueryAsync<T>(sql, param: sqlParameters, commandTimeout: 120)).FirstOrDefault();
-            connection.Close();
+            conexion.Open();
+            respuestaSql = (await conexion.QueryAsync<T>(sql, param: parametrosSql, commandTimeout: 120)).FirstOrDefault();
+            conexion.Close();
         }
-        return sqlResponse;
+        return respuestaSql;
     }
-    public async Task<T> ExecuteSingleQueryAsync(string sql, object sqlParameters)
+
+    public async Task<T> EjecutarConsultaUnaAsync(string sql, object parametrosSql)
     {
-        T entity = default(T);
+        T entidad = default(T);
 
-        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
-            entity = (await connection.QueryAsync<T>(sql, param: sqlParameters, commandTimeout: 120)).FirstOrDefault();
+            entidad = (await conexion.QueryAsync<T>(sql, param: parametrosSql, commandTimeout: 120)).FirstOrDefault();
         }
-        return entity;
+        return entidad;
     }
+
 }

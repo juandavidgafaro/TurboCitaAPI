@@ -25,7 +25,7 @@ public class RepositorioCliente : SqlServerBase<Cliente>, ICliente
 
         try
         {
-            await SingleInsert(sql, new
+            await InserccionUnitaria(sql, new
             {
                 cliente.Nombres,
                 cliente.Apellidos,

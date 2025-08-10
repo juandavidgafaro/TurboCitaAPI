@@ -1,12 +1,10 @@
-INSERT INTO ClienteVehiculo (
+INSERT INTO Vehiculo (
     ClienteID,
-    VehiculoID,
     TipoVehiculo,
     Placa
 )
 VALUES (
-    @ClienteID,
-    @VehiculoID,
+    @ClienteId,
     @TipoVehiculo,
     @Placa
 );

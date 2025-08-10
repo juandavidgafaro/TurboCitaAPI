@@ -1,11 +1,35 @@
-﻿using TurboCita.Dominio.Entidades;
+﻿using Microsoft.Extensions.Options;
+using TurboCita.Dominio.Entidades;
 using TurboCita.Dominio.Interfaces;
+using TurboCita.Infraestructura.Configuraciones;
+using TurboCita.Infraestructura.Entidades;
+using TurboCita.Infraestructura.Recursos;
+using TurboCita.Infraestructura.Repositorios.Base.SQLServer;
 
 namespace TurboCita.Infraestructura.Repositorios;
-public class RepositorioVehiculo : IVehiculo
+public class RepositorioVehiculo : SqlServerBase<Vehiculo>, IVehiculo
 {
-    public Task CrearVehiculo(EntidadVehiculo vehiculo)
+    public RepositorioVehiculo(IOptions<ConfiguracionesInfraestructura> configuraciones)
+    : base(configuraciones.Value.ConfiguracionesSQLServer.CadenaConexion.TurboCitaServidorBD)
     {
-        throw new NotImplementedException();
+    }
+
+    public async Task CrearVehiculo(EntidadVehiculo vehiculo)
+    {
+        string sql = ProcesosSQL.CrearVehiculo;
+
+        try
+        {
+            await InserccionUnitaria(sql, new
+            {
+                vehiculo.ClienteId,
+                vehiculo.TipoVehiculo,
+                vehiculo.Placa
+            });
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error al intentar crear el vehiculo con placa: {vehiculo.Placa}, detalle:{ex.Message}");
+        }
     }
 }

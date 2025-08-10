@@ -86,5 +86,23 @@ namespace TurboCita.Infraestructura.Recursos {
                 return ResourceManager.GetString("CrearCliente", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a INSERT INTO Vehiculo (
+        ///    ClienteID,
+        ///    TipoVehiculo,
+        ///    Placa
+        ///)
+        ///VALUES (
+        ///    @ClienteId,
+        ///    @TipoVehiculo,
+        ///    @Placa
+        ///);.
+        /// </summary>
+        internal static string CrearVehiculo {
+            get {
+                return ResourceManager.GetString("CrearVehiculo", resourceCulture);
+            }
+        }
     }
 }

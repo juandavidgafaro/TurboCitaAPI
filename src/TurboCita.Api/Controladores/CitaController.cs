@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using TurboCita.Api.Aplicacion.Comandos;
+using TurboCita.Api.Aplicacion.DTOs;
+using TurboCita.Api.Aplicacion.Modelos;
 
 namespace TurboCita.Api.Controladores;
 
@@ -6,27 +10,60 @@ namespace TurboCita.Api.Controladores;
 [Route("[controller]")]
 public class CitaController : ControllerBase
 {
-    //private static readonly string[] Summaries = new[]
-    //{
-    //        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    //    };
+    private readonly IMediator _mediator;
 
-    //private readonly ILogger<ControladorCita> _logger;
+    public CitaController(IMediator mediator)
+    {
+        _mediator = mediator;
+    }
 
-    //public ControladorCita(ILogger<ControladorCita> logger)
-    //{
-    //    _logger = logger;
-    //}
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> CrearCita([FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] CrearCitaDTO datosCita)
+    {
+        ComandoCrearCita comandoCrearCita = new()
+        {
+            Informacion = datosCita
+        };
 
-    //[HttpGet(Name = "GetWeatherForecast")]
-    //public IEnumerable<WeatherForecast> Get()
-    //{
-    //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-    //    {
-    //        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-    //        TemperatureC = Random.Shared.Next(-20, 55),
-    //        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-    //    })
-    //    .ToArray();
-    //}
+        await _mediator.Send(comandoCrearCita);
+
+        return Ok();
+    }
+
+    [HttpPatch("{citaId}/Editar")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarCitaDTO datosCita)
+    {
+        ComandoEditarCita comandoEditarCita = new ComandoEditarCita()
+        {
+            CitaId = citaId,
+            Informacion = datosCita
+        };
+
+        await _mediator.Send(comandoEditarCita);
+
+        return Ok();
+    }
+
+    [HttpDelete("{citaId}/Eliminar")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera)
+    {
+        ComandoEditarCita comandoEditarCita = new ComandoEditarCita()
+        {
+            CitaId = citaId,
+            Informacion = datosCita
+        };
+
+        await _mediator.Send(comandoEditarCita);
+
+        return Ok();
+    }
 }
