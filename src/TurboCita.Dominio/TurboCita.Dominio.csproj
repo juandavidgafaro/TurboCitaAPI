@@ -8,9 +8,12 @@
 
   <ItemGroup>
     <None Remove="Entidades\0e3nhob5.e5t~" />
+    <None Remove="Entidades\EntidadCita.cs~RF59120ac1.TMP" />
     <None Remove="Entidades\EntidadCliente.cs~RF3433bc45.TMP" />
     <None Remove="Entidades\EntidadCliente.cs~RF3465697f.TMP" />
     <None Remove="Entidades\EntidadCliente.cs~RF34f08223.TMP" />
+    <None Remove="Interfaces\ICita.cs~RF59209960.TMP" />
+    <None Remove="Interfaces\ICita.cs~RF59286605.TMP" />
     <None Remove="Interfaces\ICliente.cs~RF33d6d10a.TMP" />
     <None Remove="Interfaces\IVehiculo.cs~RF35948179.TMP" />
   </ItemGroup>

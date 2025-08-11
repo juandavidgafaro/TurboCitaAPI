@@ -44,4 +44,37 @@ public class ClienteController : ControllerBase
 
         return Ok(cliente);
     }
+
+    [HttpPatch("{clienteId}/Editar")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> ActualizarCita(int clienteId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarClienteDTO datosCliente)
+    {
+        ComandoEditarCliente comandoEditarCliente = new ComandoEditarCliente()
+        {
+            ClienteId = clienteId,
+            Informacion = datosCliente
+        };
+
+        await _mediator.Send(comandoEditarCliente);
+
+        return Ok();
+    }
+
+    [HttpDelete("{clienteId}/Eliminar")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> ActualizarCita(int clienteId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera)
+    {
+        ComandoEliminarCliente comandoEliminarCliente = new ComandoEliminarCliente()
+        {
+            ClienteId = clienteId
+        };
+
+        await _mediator.Send(comandoEliminarCliente);
+
+        return Ok();
+    }
 }

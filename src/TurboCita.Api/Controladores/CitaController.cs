@@ -56,13 +56,12 @@ public class CitaController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera)
     {
-        ComandoEditarCita comandoEditarCita = new ComandoEditarCita()
+        ComandoEliminarCita comandoEliminarCita = new ComandoEliminarCita()
         {
-            CitaId = citaId,
-            Informacion = datosCita
+            CitaId = citaId
         };
 
-        await _mediator.Send(comandoEditarCita);
+        await _mediator.Send(comandoEliminarCita);
 
         return Ok();
     }

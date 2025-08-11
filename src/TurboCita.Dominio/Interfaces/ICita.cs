@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TurboCita.Dominio.Entidades;
 
-namespace TurboCita.Dominio.Interfaces
+namespace TurboCita.Dominio.Interfaces;
+public interface ICita
 {
-    internal class ICita
-    {
-    }
+    Task CrearCita(EntidadCita cita);
+    Task EditarCita(EntidadCita cita);
+    Task EliminarCita(int citaId);
 }
