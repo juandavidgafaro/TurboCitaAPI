@@ -1,8 +1,8 @@
-﻿using TurboCita.Dominio.Entidades;
+﻿using TurboCita.Infraestructura.Entidades;
 
 namespace TurboCita.Infraestructura.Interfaces;
 
 public interface IRepositorioCliente
 {
-    Task<EntidadCliente> CrearCliente(EntidadCliente client);
+    Task<Cliente> ConsultarClientePorIdentificacion(string tipoDocumento, int numeroDocumento);
 }

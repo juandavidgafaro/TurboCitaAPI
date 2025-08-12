@@ -12,9 +12,16 @@
     <None Remove="Configuraciones\ConfiguracionesInfraestructura.cs~RF39fdc507.TMP" />
     <None Remove="Configuraciones\ConfiguracionesSQLServer.cs~RF39f1a024.TMP" />
     <None Remove="Configuraciones\ConfiguracionesSQLServer.cs~RF39fd0bc9.TMP" />
+    <None Remove="Entidades\Cita.cs~RF59485cb2.TMP" />
     <None Remove="Entidades\Cliente.cs~RF33c09d91.TMP" />
+    <None Remove="Entidades\Cliente.cs~RF596e6489.TMP" />
+    <None Remove="Interfaces\IRepositorioCliente.cs~RF59468cb5.TMP" />
+    <None Remove="Interfaces\IRepositorioCliente.cs~RF5971add8.TMP" />
     <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f6733da.TMP" />
     <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f7aea9b.TMP" />
+    <None Remove="Recursos\SQL\kloonna4.0ec~" />
+    <None Remove="Recursos\SQL\ObtenerClientePorIdentificacion.sql~RF59f7f7f5.TMP" />
+    <None Remove="Recursos\SQL\ObtenerClientePorIdentificacion.sql~RF5a07fda5.TMP" />
     <None Remove="Repositorios\bxyc3igd.2in~" />
     <None Remove="Repositorios\hfmucttp.xvc~" />
     <None Remove="Repositorios\RepositorioCliente.cs~RF33b99f97.TMP" />

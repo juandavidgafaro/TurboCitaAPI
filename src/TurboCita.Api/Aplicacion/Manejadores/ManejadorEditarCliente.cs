@@ -1,19 +1,30 @@
 ﻿using MediatR;
 using TurboCita.Api.Aplicacion.Comandos;
+using TurboCita.Dominio.Entidades;
 using TurboCita.Dominio.Interfaces;
 
 namespace TurboCita.Api.Aplicacion.Manejadores;
 public class ManejadorEditarCliente : IRequestHandler<ComandoEditarCliente, Unit>
 {
-    private readonly ICita _cita;
+    private readonly ICliente _cliente;
 
-    public ManejadorEditarCliente(ICita cita)
+    public ManejadorEditarCliente(ICliente cliente)
     {
-        _cita = cita;
+        _cliente = cliente;
     }
 
-    public Task<Unit> Handle(ComandoEditarCliente solicitud, CancellationToken token)
+    public async Task<Unit> Handle(ComandoEditarCliente solicitud, CancellationToken token)
     {
-        throw new NotImplementedException();
+        EntidadCliente cliente = new()
+        {
+            Id = solicitud.ClienteId,
+            Direccion = solicitud.Informacion.Direccion,
+            CorreoElectronico = solicitud.Informacion.CorreoElectronico,
+            Celular = solicitud.Informacion.Celular
+        };
+
+        await _cliente.EditarCliente(cliente);
+
+        return Unit.Value;
     }
 }

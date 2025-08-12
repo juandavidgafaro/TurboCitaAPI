@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using TurboCita.Api.Extensiones;
 using TurboCita.Dominio.Interfaces;
 using TurboCita.Infraestructura.Configuraciones;
+using TurboCita.Infraestructura.Interfaces;
 using TurboCita.Infraestructura.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,9 @@ builder.Services.Configure<ConfiguracionesInfraestructura>(builder.Configuration
 
 // Repositorios
 builder.Services.AddTransient<ICliente, RepositorioCliente>();
+builder.Services.AddTransient<IRepositorioCliente, RepositorioCliente>();
 builder.Services.AddTransient<IVehiculo, RepositorioVehiculo>();
+builder.Services.AddTransient<ICita, RepositorioCita>();
 
 var app = builder.Build();
 

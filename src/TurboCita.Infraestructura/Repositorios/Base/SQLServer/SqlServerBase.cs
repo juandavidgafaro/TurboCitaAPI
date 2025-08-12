@@ -12,7 +12,7 @@ public class SqlServerBase<T> where T : class
         _cadenaConexion = connectionString;
     }
 
-    public async Task<int> InserccionUnitaria(string sql, object parametros)
+    public async Task<int> InsercionUnitaria(string sql, object parametros)
     {
         using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
         {
@@ -91,7 +91,7 @@ public class SqlServerBase<T> where T : class
         return respuestaSql;
     }
 
-    public async Task<T> EjecutarConsultaUnaAsync(string sql, object parametrosSql)
+    public async Task<T> EjecutarProcesoAsincrono(string sql, object parametrosSql)
     {
         T entidad = default(T);
 

@@ -2,24 +2,24 @@
 using TurboCita.Api.Aplicacion.Consultas;
 using TurboCita.Api.Aplicacion.DTOs;
 using TurboCita.Dominio.Entidades;
-using TurboCita.Dominio.Interfaces;
+using TurboCita.Infraestructura.Interfaces;
 
 namespace TurboCita.Api.Aplicacion.Manejadores;
 public class ManejadorConsultarClientePorIdentificacion : IRequestHandler<ConsultarClientePorIdentificacion, ClienteDTO>
 {
-    private readonly ICliente _cliente;
+    private readonly IRepositorioCliente _repositorioCliente;
 
-    public ManejadorConsultarClientePorIdentificacion(ICliente cliente)
+    public ManejadorConsultarClientePorIdentificacion(IRepositorioCliente repositorioCliente)
     {
-        _cliente = cliente;
+        _repositorioCliente = repositorioCliente;
     }
 
     public async Task<ClienteDTO> Handle(ConsultarClientePorIdentificacion solicitud, CancellationToken token)
     {
-        EntidadCliente cliente = await _cliente.ConsultarClientePorIdentificacion(solicitud.tipoDocumento, solicitud.numeroDocumento);
+        EntidadCliente cliente = await _repositorioCliente.ConsultarClientePorIdentificacion(solicitud.tipoDocumento, solicitud.numeroDocumento);
 
-
-        return new ClienteDTO { 
+        return new ClienteDTO
+        {
             Id = cliente.Id,
             Nombres = cliente.Nombres,
             Apellidos = cliente.Apellidos,

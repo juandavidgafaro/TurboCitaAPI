@@ -20,7 +20,7 @@ public class RepositorioVehiculo : SqlServerBase<Vehiculo>, IVehiculo
 
         try
         {
-            await InserccionUnitaria(sql, new
+            await InsercionUnitaria(sql, new
             {
                 vehiculo.ClienteId,
                 vehiculo.TipoVehiculo,

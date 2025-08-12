@@ -23,6 +23,7 @@
     <None Remove="Aplicacion\DTOs\CrearVehiculoDTO.cs~RF2f3b4e54.TMP" />
     <None Remove="Aplicacion\DTOs\EditarClienteDTO.cs~RF588b2bf5.TMP" />
     <None Remove="Aplicacion\DTOs\EditarFechaCitaDTO.cs~RF586e5c0b.TMP" />
+    <None Remove="Aplicacion\Manejadores\445lttxq.5du~" />
     <None Remove="Aplicacion\Manejadores\ManejadorConsultarClientePorIdentificacion.cs~RF3463ceca.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCita.cs~RF5878da62.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCita.cs~RF5915af5f.TMP" />
@@ -37,9 +38,11 @@
     <None Remove="Aplicacion\Manejadores\ManejadorEditarCliente.cs~RF588de355.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorEditarCliente.cs~RF5894387c.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorEditarCliente.cs~RF59246f9d.TMP" />
+    <None Remove="Aplicacion\Manejadores\ManejadorEditarCliente.cs~RF592fae95.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorEliminarCita.cs~RF5880dd88.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorEliminarCita.cs~RF5923256a.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorEliminarCita.cs~RF5925d642.TMP" />
+    <None Remove="Aplicacion\Manejadores\ManejadorEliminarCliente.cs~RF59344b9d.TMP" />
     <None Remove="appsettings.Development.json~RF39f33fab.TMP" />
     <None Remove="appsettings.Development.json~RF39f5d337.TMP" />
     <None Remove="Extensiones\ExtensionCors.cs~RF3ab293a6.TMP" />

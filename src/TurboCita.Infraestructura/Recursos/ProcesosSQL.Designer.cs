@@ -104,5 +104,30 @@ namespace TurboCita.Infraestructura.Recursos {
                 return ResourceManager.GetString("CrearVehiculo", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DELETE FROM Vehiculo
+        ///WHERE ClienteId = @clienteId;
+        ///
+        ///DELETE FROM Cliente
+        ///WHERE ClienteId = @clienteId;.
+        /// </summary>
+        internal static string EliminarCliente {
+            get {
+                return ResourceManager.GetString("EliminarCliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SELECT ClienteId AS Id, *
+        ///FROM Cliente
+        ///WHERE TipoDocumento = @tipoDocumento
+        ///  AND NumeroDocumento = @numeroDocumento;.
+        /// </summary>
+        internal static string ObtenerClientePorIdentificacion {
+            get {
+                return ResourceManager.GetString("ObtenerClientePorIdentificacion", resourceCulture);
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ public class ClienteController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ClienteDTO>> ObtenerClientePorIdentificacion([FromHeader] ModeloEncabezadoSolicitud datosCabecer, [FromBody] ConsultarClientePorIdentificacion datosConsulta)
+    public async Task<ActionResult<ClienteDTO>> ObtenerClientePorIdentificacion([FromHeader] ModeloEncabezadoSolicitud datosCabecer, [FromQuery] ConsultarClientePorIdentificacion datosConsulta)
     {
         ClienteDTO cliente = await _mediator.Send(datosConsulta);
 
