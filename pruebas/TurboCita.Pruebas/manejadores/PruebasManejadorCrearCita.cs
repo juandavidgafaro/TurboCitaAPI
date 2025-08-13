@@ -1,9 +1,10 @@
-﻿using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using Moq;
+using TurboCita.Api.Aplicacion.Comandos;
+using TurboCita.Api.Aplicacion.DTOs;
+using TurboCita.Api.Aplicacion.Manejadores;
+using TurboCita.Dominio.Entidades;
+using TurboCita.Dominio.Interfaces;
 
 namespace TurboCita.Pruebas.manejadores;
 public class PruebasManejadorCrearCita
@@ -23,7 +24,7 @@ public class PruebasManejadorCrearCita
         // Preparación
         var solicitud = new ComandoCrearCita
         {
-            Informacion = new CrearCitaRequestDto
+            Informacion = new CrearCitaDTO
             {
                 ClienteId = 1,
                 VehiculoId = 10,

@@ -6,4 +6,4 @@ SELECT
     FechaRegistro,
     FechaCita
 FROM Cita
-WHERE ClienteId = @ClienteId;
+WHERE ClienteId = @clienteId;

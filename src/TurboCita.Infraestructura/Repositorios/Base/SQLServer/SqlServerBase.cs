@@ -54,7 +54,7 @@ public class SqlServerBase<T> where T : class
         return filasAfectadas;
     }
 
-    public async Task<IEnumerable<TResultado>> EjecutarResultado<TResultado>(string sql, object parametros)
+    public async Task<IEnumerable<TResultado>> EjecutarProcesoAsincrono<TResultado>(string sql, object parametros)
     {
         IEnumerable<TResultado> resultado = Enumerable.Empty<TResultado>();
         using (SqlConnection conexion = new SqlConnection(_cadenaConexion))

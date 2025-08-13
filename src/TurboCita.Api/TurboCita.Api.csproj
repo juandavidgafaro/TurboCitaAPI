@@ -12,8 +12,11 @@
     <None Remove="Aplicacion\Comandos\ComandoCrearCita.cs~RF5777100f.TMP" />
     <None Remove="Aplicacion\Comandos\ComandoCrearCita.cs~RF578109e4.TMP" />
     <None Remove="Aplicacion\Comandos\ComandoCrearCliente.cs~RF2f478ba1.TMP" />
+    <None Remove="Aplicacion\Comandos\ComandoCrearVehiculo.cs~RF64788a21.TMP" />
     <None Remove="Aplicacion\Comandos\ComandoEditarCliente.cs~RF588fbcc8.TMP" />
     <None Remove="Aplicacion\Comandos\ComandoEditarCliente.cs~RF5890e133.TMP" />
+    <None Remove="Aplicacion\Comandos\ComandoEditarEstadoCita.cs~RF6464fd9d.TMP" />
+    <None Remove="Aplicacion\Comandos\ComandoEditarEstadoCita.cs~RF6466cb0a.TMP" />
     <None Remove="Aplicacion\Comandos\ComandoEliminarCliente.cs~RF5896aedb.TMP" />
     <None Remove="Aplicacion\Consultas\ConsultarClientePorIdentificacion.cs~RF3450753d.TMP" />
     <None Remove="Aplicacion\Consultas\ConsultarClientePorIdentificacion.cs~RF345403b3.TMP" />
@@ -24,6 +27,7 @@
     <None Remove="Aplicacion\DTOs\EditarClienteDTO.cs~RF588b2bf5.TMP" />
     <None Remove="Aplicacion\DTOs\EditarFechaCitaDTO.cs~RF586e5c0b.TMP" />
     <None Remove="Aplicacion\Manejadores\445lttxq.5du~" />
+    <None Remove="Aplicacion\Manejadores\ManejadorConsultarCitasPorCliente.cs~RF6444f4ee.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorConsultarClientePorIdentificacion.cs~RF3463ceca.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCita.cs~RF5878da62.TMP" />
     <None Remove="Aplicacion\Manejadores\ManejadorCrearCita.cs~RF5915af5f.TMP" />

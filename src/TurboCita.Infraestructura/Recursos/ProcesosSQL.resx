@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CrearCita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SQL\CrearCita.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="CrearCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SQL\CrearCliente.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -127,8 +130,20 @@
   <data name="EditarCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SQL\EditarCliente.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="EditarEstadoCita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SQL\EditarEstadoCita.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="EditarFechaCita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SQL\EditarFechaCita.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="EliminarCita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SQL\EliminarCita.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="EliminarCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SQL\EliminarCliente.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ObtenerCitasPorClienteId" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SQL\ObtenerCitasPorClienteId.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="ObtenerClientePorIdentificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SQL\ObtenerClientePorIdentificacion.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

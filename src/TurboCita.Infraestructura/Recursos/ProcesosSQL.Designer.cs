@@ -61,6 +61,26 @@ namespace TurboCita.Infraestructura.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a INSERT INTO Cita (
+        ///    ClienteId,
+        ///    VehiculoId,
+        ///    Estado,
+        ///    FechaCita
+        ///)
+        ///VALUES (
+        ///    @clienteId,
+        ///    @vehiculoId,
+        ///    @estado,
+        ///    @fechaCita
+        ///);.
+        /// </summary>
+        internal static string CrearCita {
+            get {
+                return ResourceManager.GetString("CrearCita", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a INSERT INTO Cliente (
         ///    Nombres,
         ///    Apellidos,
@@ -120,6 +140,38 @@ namespace TurboCita.Infraestructura.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a UPDATE Cita
+        ///SET Estado = @estado
+        ///WHERE CitaId = @citaId;.
+        /// </summary>
+        internal static string EditarEstadoCita {
+            get {
+                return ResourceManager.GetString("EditarEstadoCita", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a UPDATE Cita
+        ///SET FechaCita = @fechaCita
+        ///WHERE CitaId = @citaId;.
+        /// </summary>
+        internal static string EditarFechaCita {
+            get {
+                return ResourceManager.GetString("EditarFechaCita", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DELETE FROM Cita
+        ///WHERE CitaId = @citaId;.
+        /// </summary>
+        internal static string EliminarCita {
+            get {
+                return ResourceManager.GetString("EliminarCita", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a DELETE FROM Vehiculo
         ///WHERE ClienteId = @clienteId;
         ///
@@ -129,6 +181,23 @@ namespace TurboCita.Infraestructura.Recursos {
         internal static string EliminarCliente {
             get {
                 return ResourceManager.GetString("EliminarCliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SELECT 
+        ///    CitaId AS Id,
+        ///    ClienteId,
+        ///    VehiculoId,
+        ///    Estado,
+        ///    FechaRegistro,
+        ///    FechaCita
+        ///FROM Cita
+        ///WHERE ClienteId = @clienteId;.
+        /// </summary>
+        internal static string ObtenerCitasPorClienteId {
+            get {
+                return ResourceManager.GetString("ObtenerCitasPorClienteId", resourceCulture);
             }
         }
         

@@ -3,5 +3,5 @@
 namespace TurboCita.Infraestructura.Interfaces;
 public interface IRepositorioCita
 {
-    Task<IList<Cita>> ConsultarCitasPorCliente(int clienteId);
+    Task<IEnumerable<Cita>> ConsultarCitasPorCliente(int clienteId);
 }

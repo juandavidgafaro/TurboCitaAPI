@@ -5,7 +5,7 @@ using TurboCita.Infraestructura.Entidades;
 using TurboCita.Infraestructura.Interfaces;
 
 namespace TurboCita.Api.Aplicacion.Manejadores;
-public class ManejadorConsultarCitasPorCliente : IRequestHandler<ConsultarCitasPorCliente, IList<CitaDTO>>
+public class ManejadorConsultarCitasPorCliente : IRequestHandler<ConsultarCitasPorCliente, IEnumerable<CitaDTO>>
 {
     private readonly IRepositorioCita _repositorioCita;
 
@@ -14,9 +14,9 @@ public class ManejadorConsultarCitasPorCliente : IRequestHandler<ConsultarCitasP
         _repositorioCita = repositorioCita;
     }
 
-    public  async Task<IList<CitaDTO>> Handle(ConsultarCitasPorCliente solictud, CancellationToken token)
+    public  async Task<IEnumerable<CitaDTO>> Handle(ConsultarCitasPorCliente solictud, CancellationToken token)
     {
-        IList<Cita> citas = await _repositorioCita.ConsultarCitasPorCliente(solictud.clienteId);
+        IEnumerable<Cita> citas = await _repositorioCita.ConsultarCitasPorCliente(solictud.clienteId);
 
         return citas.Select(c => new CitaDTO
         {

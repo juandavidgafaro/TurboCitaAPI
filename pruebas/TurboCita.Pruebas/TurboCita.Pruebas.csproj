@@ -18,6 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\TurboCita.Api\TurboCita.Api.csproj" />
+    <ProjectReference Include="..\..\src\TurboCita.Dominio\TurboCita.Dominio.csproj" />
+    <ProjectReference Include="..\..\src\TurboCita.Infraestructura\TurboCita.Infraestructura.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 

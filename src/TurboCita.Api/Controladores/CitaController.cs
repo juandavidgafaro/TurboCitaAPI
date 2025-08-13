@@ -37,9 +37,9 @@ public class CitaController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarEstadoCitaDTO datosCita)
+    public async Task<ActionResult> EditarEstadoCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarEstadoCitaDTO datosCita)
     {
-        ComandoEditarEstadoCita comandoEditarCita = new ComandoEditarEstadoCita()
+        ComandoEditarFechaoCita comandoEditarCita = new ComandoEditarFechaoCita()
         {
             CitaId = citaId,
             Informacion = datosCita
@@ -54,9 +54,9 @@ public class CitaController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarEstadoCitaDTO datosCita)
+    public async Task<ActionResult> EditarFechaCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarEstadoCitaDTO datosCita)
     {
-        ComandoEditarEstadoCita comandoEditarCita = new ComandoEditarEstadoCita()
+        ComandoEditarFechaoCita comandoEditarCita = new ComandoEditarFechaoCita()
         {
             CitaId = citaId,
             Informacion = datosCita

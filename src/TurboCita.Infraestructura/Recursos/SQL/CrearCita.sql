@@ -5,8 +5,8 @@ INSERT INTO Cita (
     FechaCita
 )
 VALUES (
-    @ClienteId,
-    @VehiculoId,
-    @Estado,
-    @FechaCita
+    @clienteId,
+    @vehiculoId,
+    @estado,
+    @fechaCita
 );
