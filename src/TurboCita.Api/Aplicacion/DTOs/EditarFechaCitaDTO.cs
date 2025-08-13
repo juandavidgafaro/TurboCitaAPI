@@ -1,5 +1,5 @@
 ﻿namespace TurboCita.Api.Aplicacion.DTOs;
-public class EditarCitaDTO
+public class EditarFechaCitaDTO
 {
     public DateTime FechaCita { get; set; }
 }

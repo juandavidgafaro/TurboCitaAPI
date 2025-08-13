@@ -33,13 +33,30 @@ public class CitaController : ControllerBase
         return Ok();
     }
 
-    [HttpPatch("{citaId}/Editar")]
+    [HttpPatch("{citaId}/EditarEstado")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarCitaDTO datosCita)
+    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarEstadoCitaDTO datosCita)
     {
-        ComandoEditarCita comandoEditarCita = new ComandoEditarCita()
+        ComandoEditarEstadoCita comandoEditarCita = new ComandoEditarEstadoCita()
+        {
+            CitaId = citaId,
+            Informacion = datosCita
+        };
+
+        await _mediator.Send(comandoEditarCita);
+
+        return Ok();
+    }
+
+    [HttpPatch("{citaId}/EditarFechaCita")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera, [FromBody] EditarEstadoCitaDTO datosCita)
+    {
+        ComandoEditarEstadoCita comandoEditarCita = new ComandoEditarEstadoCita()
         {
             CitaId = citaId,
             Informacion = datosCita
@@ -54,7 +71,7 @@ public class CitaController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> ActualizarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera)
+    public async Task<ActionResult> EliminarCita(int citaId, [FromHeader] ModeloEncabezadoSolicitud datosCabecera)
     {
         ComandoEliminarCita comandoEliminarCita = new ComandoEliminarCita()
         {

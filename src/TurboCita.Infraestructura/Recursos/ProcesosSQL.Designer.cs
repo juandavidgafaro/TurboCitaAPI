@@ -106,6 +106,20 @@ namespace TurboCita.Infraestructura.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a UPDATE Cliente
+        ///SET 
+        ///    Direccion = @direccion,
+        ///    CorreoElectronico = @correoElectronico,
+        ///    Celular = @celular
+        ///WHERE ClienteId = @clienteId;.
+        /// </summary>
+        internal static string EditarCliente {
+            get {
+                return ResourceManager.GetString("EditarCliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a DELETE FROM Vehiculo
         ///WHERE ClienteId = @clienteId;
         ///

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboCita.Dominio", "src\Tu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboCita.Infraestructura", "src\TurboCita.Infraestructura\TurboCita.Infraestructura.csproj", "{8136E188-A707-4160-8872-2A739D4E3C58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboCita.Pruebas", "pruebas\TurboCita.Pruebas\TurboCita.Pruebas.csproj", "{8A736E77-55A1-48BC-83B4-630E54D48FB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pruebas", "pruebas", "{BEF9C739-3501-4627-B493-4513B843BD18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{8136E188-A707-4160-8872-2A739D4E3C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8136E188-A707-4160-8872-2A739D4E3C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8136E188-A707-4160-8872-2A739D4E3C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A736E77-55A1-48BC-83B4-630E54D48FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A736E77-55A1-48BC-83B4-630E54D48FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A736E77-55A1-48BC-83B4-630E54D48FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A736E77-55A1-48BC-83B4-630E54D48FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 		{4E732C43-D67B-4147-8678-FAB2A305550A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{CACE56BC-408C-4F2D-BB7C-6CF38EE97E52} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{8136E188-A707-4160-8872-2A739D4E3C58} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8A736E77-55A1-48BC-83B4-630E54D48FB1} = {BEF9C739-3501-4627-B493-4513B843BD18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46F49292-A057-4D0E-81A6-8AE0E867F9A9}

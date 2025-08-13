@@ -54,9 +54,27 @@ public class RepositorioCliente : SqlServerBase<Cliente>, ICliente, IRepositorio
         }
     }
 
-    public Task EditarCliente(EntidadCliente cliente)
+    public async Task EditarCliente(EntidadCliente cliente)
     {
-        throw new NotImplementedException();
+        string sql = ProcesosSQL.EditarCliente;
+
+        try
+        {
+            Cliente client = await EjecutarProcesoAsincrono(sql, 
+                new
+                {
+                    clienteId = cliente.Id,
+                    direccion = cliente.Direccion,
+                    correoElectronico = cliente.CorreoElectronico,
+                    celular = cliente.Celular
+                }
+            );
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error al intentar editar el cliente con id: {cliente.Id}, detalle:{ex.Message}");
+        }
     }
 
     public async Task EliminarCliente(int clienteId)
@@ -70,7 +88,7 @@ public class RepositorioCliente : SqlServerBase<Cliente>, ICliente, IRepositorio
         }
         catch (Exception ex)
         {
-            throw new Exception($"Error al intentar obtener el cliente con id: {clienteId}, detalle:{ex.Message}");
+            throw new Exception($"Error al intentar eliminar el cliente con id: {clienteId}, detalle:{ex.Message}");
         }
     }
 }

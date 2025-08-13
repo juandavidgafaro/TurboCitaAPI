@@ -1,0 +1,10 @@
+﻿namespace TurboCita.Api.Aplicacion.DTOs;
+public class CitaDTO
+{
+    public int Id { get; set; }
+    public int ClienteId { get; set; }
+    public int VehiculoId { get; set; }
+    public string Estado { get; set; }
+    public DateTime FechaRegistro { get; set; } = DateTime.Now;
+    public DateTime FechaCita { get; set; } = DateTime.Now;
+}

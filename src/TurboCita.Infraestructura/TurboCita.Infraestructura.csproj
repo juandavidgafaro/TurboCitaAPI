@@ -15,10 +15,14 @@
     <None Remove="Entidades\Cita.cs~RF59485cb2.TMP" />
     <None Remove="Entidades\Cliente.cs~RF33c09d91.TMP" />
     <None Remove="Entidades\Cliente.cs~RF596e6489.TMP" />
+    <None Remove="Interfaces\IRepositorioCita.cs~RF64404f99.TMP" />
+    <None Remove="Interfaces\IRepositorioCita.cs~RF6441e637.TMP" />
     <None Remove="Interfaces\IRepositorioCliente.cs~RF59468cb5.TMP" />
     <None Remove="Interfaces\IRepositorioCliente.cs~RF5971add8.TMP" />
+    <None Remove="Recursos\SQL\CrearCita.sql~RF63fe02d2.TMP" />
     <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f6733da.TMP" />
     <None Remove="Recursos\SQL\CrearVehiculo.sql~RF4f7aea9b.TMP" />
+    <None Remove="Recursos\SQL\EditarCliente.sql~RF63e55243.TMP" />
     <None Remove="Recursos\SQL\kloonna4.0ec~" />
     <None Remove="Recursos\SQL\ObtenerClientePorIdentificacion.sql~RF59f7f7f5.TMP" />
     <None Remove="Recursos\SQL\ObtenerClientePorIdentificacion.sql~RF5a07fda5.TMP" />
@@ -27,10 +31,6 @@
     <None Remove="Repositorios\RepositorioCliente.cs~RF33b99f97.TMP" />
     <None Remove="Repositorios\RepositorioVehiculo.cs~RF30016ca6.TMP" />
     <None Remove="Repositorios\RepositorioVehiculo.cs~RF306e7213.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Recursos\SQL\" />
   </ItemGroup>
 
   <ItemGroup>

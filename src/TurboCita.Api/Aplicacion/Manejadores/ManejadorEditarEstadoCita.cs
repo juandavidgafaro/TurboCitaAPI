@@ -4,24 +4,24 @@ using TurboCita.Dominio.Entidades;
 using TurboCita.Dominio.Interfaces;
 
 namespace TurboCita.Api.Aplicacion.Manejadores;
-public class ManejadorEditarCita : IRequestHandler<ComandoEditarCita, Unit>
+public class ManejadorEditarEstadoCita : IRequestHandler<ComandoEditarEstadoCita, Unit>
 {
     private readonly ICita _cita;
 
-    public ManejadorEditarCita(ICita cita)
+    public ManejadorEditarEstadoCita(ICita cita)
     {
         _cita = cita;
     }
 
-    public async Task<Unit> Handle(ComandoEditarCita solicitud, CancellationToken token)
+    public async Task<Unit> Handle(ComandoEditarEstadoCita solicitud, CancellationToken token)
     {
         EntidadCita cita = new()
         {
             Id = solicitud.CitaId,
-            FechaCita = solicitud.Informacion.FechaCita
+            Estado = solicitud.Informacion.Estado
         };
 
-        await _cita.EditarCita(cita);
+        await _cita.EditarEstadoCita(cita);
 
         return Unit.Value;
     }
